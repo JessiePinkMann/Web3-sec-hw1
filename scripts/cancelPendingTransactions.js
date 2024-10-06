@@ -15,12 +15,12 @@ async function cancelPendingTransactions() {
       console.log(`Отмена транзакции с nonce ${nonceToReplace}`);
 
       const tx = {
-        to: deployer.address, // Отправляем себе
-        value: 0, // Нулевая сумма
-        nonce: nonceToReplace, // Тот же nonce
-        gasLimit: 21000, // Минимальный лимит газа
-        maxFeePerGas: hre.ethers.utils.parseUnits('200', 'gwei'), // Высокая цена газа
-        maxPriorityFeePerGas: hre.ethers.utils.parseUnits('50', 'gwei'), // Высокая приоритетная плата
+        to: deployer.address,
+        value: 0, 
+        nonce: nonceToReplace,
+        gasLimit: 21000, 
+        maxFeePerGas: hre.ethers.utils.parseUnits('200', 'gwei'),
+        maxPriorityFeePerGas: hre.ethers.utils.parseUnits('50', 'gwei'),
       };
 
       const txResponse = await deployer.sendTransaction(tx);
